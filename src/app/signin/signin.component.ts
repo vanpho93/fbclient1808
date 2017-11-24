@@ -13,9 +13,10 @@ export class SigninComponent {
   onSignIn(form) {
     this.signInService.sendPost(form.value)
     .then(res => {
-      const { name, token } = res;
-      localStorage.setItem('name', name);
+      const { user, token } = res;
+      localStorage.setItem('name', user.name);
       localStorage.setItem('token', token);
+      console.log(res);
     })
     .catch(err => console.log(err));
   }
