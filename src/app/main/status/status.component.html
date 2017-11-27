@@ -1,6 +1,7 @@
 <p>
   {{ status.content }}
 </p>
+<button (click)="onHitLike()">{{ status.likes.length }} likes</button>
 <form (ngSubmit)="onSubmit(formComment.value)" #formComment="ngForm">
   <input placeholder="Your comment" [(ngModel)]="txtComment" name="comment"/>
 </form>
