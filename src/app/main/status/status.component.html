@@ -1,0 +1,6 @@
+<p>
+  {{ status.content }}
+</p>
+<form (ngSubmit)="onSubmit(formComment.value)" #formComment="ngForm">
+  <input placeholder="Your comment" [(ngModel)]="txtComment" name="comment"/>
+</form>
