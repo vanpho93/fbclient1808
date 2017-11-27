@@ -4,3 +4,7 @@
 <form (ngSubmit)="onSubmit(formComment.value)" #formComment="ngForm">
   <input placeholder="Your comment" [(ngModel)]="txtComment" name="comment"/>
 </form>
+<div *ngFor="let comment of status.comments">
+  <h4>{{ comment.user.name }}</h4>
+  <p>{{ comment.content }}</p>
+</div>

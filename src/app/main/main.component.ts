@@ -12,6 +12,9 @@ export class MainComponent implements OnInit {
   constructor(private statusService: StatusService) { }
   ngOnInit() {
     this.statusService.getStatuses()
-    .then(statuses => this.statuses = statuses);
+    .then(statuses => {
+      this.statuses = statuses;
+      console.log(statuses);
+    });
   }
 }

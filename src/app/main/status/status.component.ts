@@ -18,7 +18,8 @@ export class StatusComponent implements OnInit {
   }
 
   onSubmit(formValue) {
-    console.log(formValue);
+    this.commentService.sendComment(this.status._id, formValue.comment)
+    .then(x => console.log(x));
     this.txtComment = '';
   }
 }
