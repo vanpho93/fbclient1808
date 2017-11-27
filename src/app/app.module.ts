@@ -10,9 +10,11 @@ import { SignInService } from './signin/signin.service';
 import { MainComponent } from './main/main.component';
 import { AuthGuard } from './auth.guard';
 import { StatusComponent } from './main/status/status.component';
+import { FriendsComponent } from './friends/friends.component';
 
 const routerConfig: Routes = [
   { path: '', component: MainComponent, canActivate: [AuthGuard] },
+  { path: 'friends', component: FriendsComponent, canActivate: [AuthGuard] },
   { path: 'signin', component: SigninComponent }
 ];
 
@@ -21,7 +23,8 @@ const routerConfig: Routes = [
     AppComponent,
     SigninComponent,
     MainComponent,
-    StatusComponent
+    StatusComponent,
+    FriendsComponent
   ],
   imports: [
     BrowserModule,
