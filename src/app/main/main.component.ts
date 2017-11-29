@@ -16,5 +16,9 @@ export class MainComponent implements OnInit {
       this.statuses = statuses;
       console.log(statuses);
     });
+
+    this.statusService.getNotifications()
+    .then(notifications => console.log(notifications))
+    .catch(err => console.log(err));
   }
 }
