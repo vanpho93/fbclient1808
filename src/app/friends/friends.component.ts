@@ -52,4 +52,9 @@ export class FriendsComponent implements OnInit {
     this.friendService.addFriend(id);
     this.users.find(user => user._id === id).relationship = Relationship.SENT_REQUESTED;
   }
+
+  acceptFriend(id) {
+    this.friendService.acceptFriend(id);
+    this.users.find(user => user._id === id).relationship = Relationship.FRIEND;
+  }
 }

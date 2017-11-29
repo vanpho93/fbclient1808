@@ -25,7 +25,16 @@ export class FriendService {
 
   addFriend(idReceiver: string) {
     const url = 'http://localhost:3000/friend/request/' + idReceiver;
-    console.log(url);
+    const token = localStorage.getItem('token');
+    const headers = new Headers();
+    headers.append('token', token);
+    return this.http.get(url, { headers })
+    .toPromise()
+    .then(res => res.json());
+  }
+
+  acceptFriend(idSender: string) {
+    const url = 'http://localhost:3000/friend/accept/' + idSender;
     const token = localStorage.getItem('token');
     const headers = new Headers();
     headers.append('token', token);

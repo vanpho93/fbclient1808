@@ -3,5 +3,5 @@
   <button (click)="addFriend(user._id)" *ngIf="user.relationship == undefined">Add friend</button>
   <button (click)="addFriend(user._id)" *ngIf="user.relationship == 3">Da la ban be</button>
   <button (click)="addFriend(user._id)" *ngIf="user.relationship == 0">Dang cho chap nhan</button>
-  <button (click)="addFriend(user._id)" *ngIf="user.relationship == 1">Chap nhan</button>
+  <button (click)="acceptFriend(user._id)" *ngIf="user.relationship == 1">Chap nhan</button>
 </div>
