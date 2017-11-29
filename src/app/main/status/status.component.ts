@@ -27,8 +27,11 @@ export class StatusComponent implements OnInit {
     this.txtComment = '';
   }
 
-  onHitLike() {
+  async onHitLike() {
     this.statusService.hitLike(this.status._id)
-    .then(x => console.log(x));
+    .then(res => {
+      if (!res.isSuccess) return alert('Ban da like');
+      return this.status.likes.push('');
+    });
   }
 }

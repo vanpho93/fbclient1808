@@ -8,7 +8,7 @@ export class StatusService {
     constructor(private http: Http) {}
 
     getStatuses() {
-        const url = 'http://localhost:3000/status/';
+        const url = 'http://localhost:3000/status/newfeed';
         const token = localStorage.getItem('token');
         const headers = new Headers({ token });
         return this.http.get(url, { headers })

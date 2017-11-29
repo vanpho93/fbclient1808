@@ -4,4 +4,5 @@ export interface Status {
     comments: [
         { user: { name: string }, content: string }
     ];
+    likes: any [];
 }
