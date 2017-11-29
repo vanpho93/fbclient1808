@@ -14,6 +14,15 @@ export class FriendService {
       .then(res => res.json());
   }
 
+  getAllRelationship() {
+    const url = 'http://localhost:3000/friend/';
+    const token = localStorage.getItem('token');
+    const headers = new Headers({ token });
+    return this.http.get(url, { headers })
+      .toPromise()
+      .then(res => res.json());
+  }
+
   addFriend(idReceiver: string) {
     const url = 'http://localhost:3000/friend/request/' + idReceiver;
     console.log(url);
